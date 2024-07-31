@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Sarkari Yojna Portal</title>
     <style>
         body {
@@ -38,29 +39,66 @@
         .language-buttons button:hover {
             background-color: #555;
         }
-        nav ul {
-            list-style: none;
-            padding: 0;
-            text-align: center;
+        .topnav {
+            overflow: hidden;
             background-color: #333;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        nav ul li {
-            margin: 0;
-        }
-        nav ul li a {
+        .topnav a {
+            float: left;
             display: block;
-            padding: 1rem;
-            color: white;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            font-size: 17px;
         }
-        nav ul li a:hover {
-            background-color: #444;
+        .active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        .topnav .icon {
+            display: none;
+        }
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+        .dropdown .dropbtn {
+            font-size: 17px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .topnav a:hover, .dropdown:hover .dropbtn {
+            background-color: #555;
+            color: white;
+        }
+        .dropdown-content a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         main {
             padding: 2rem;
@@ -74,7 +112,6 @@
             text-align: center;
             padding: 1rem 0;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-            position: fixed;
             width: 100%;
             bottom: 0;
             display: flex;
@@ -83,6 +120,8 @@
             flex-wrap: wrap;
         }
         footer div {
+            display: flex;
+            align-items: center;
             margin: 5px;
             padding: 5px 10px;
             background-color: #444;
@@ -112,23 +151,60 @@
             scrollbar-width: thin;
             scrollbar-color: #888 #f1f1f1;
         }
+        .navbar {
+            width: 100%;
+            background-color: #555;
+            overflow: auto;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            transform: translateY(0);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+        .navbar a {
+            float: left;
+            padding: 12px;
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            width: 18%;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #000;
+        }
+        .navbar a.active {
+            background-color: #04AA6D;
+        }
         /* Mobile Styles */
-        @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child), .dropdown .dropbtn {
+                display: none;
             }
-            .language-buttons {
-                top: 5px;
-                right: 5px;
-            }
-            footer {
-                flex-direction: column;
+            .topnav a.icon {
+                float: right;
+                display: block;
             }
         }
-        /* Tablet Styles */
-        @media (min-width: 601px) and (max-width: 1024px) {
-            nav ul li {
-                margin: 0 0.5rem;
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {position: relative;}
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav.responsive .dropdown {float: none;}
+            .topnav.responsive .dropdown-content {position: relative;}
+            .topnav.responsive .dropdown .dropbtn {
+                display: block;
+                width: 100%;
+                text-align: left;
             }
         }
     </style>
@@ -136,76 +212,164 @@
 <body>
     <header>
         <div class="language-buttons">
-            <button onclick="setLanguage('en')">English</button>
+            <button onclick="setLanguage('en')" aria-pressed="true">English</button>
             <button onclick="setLanguage('hi')">हिंदी</button>
         </div>
-        <h1 id="header-title">Yojna Portal</h1>
+        <h1 id="header-title" style="font-size:3vw;">Yojna Portal</h1>
         <h2 id="header-subtitle">This site is under progress, soon this website will look in a better view, stay tuned to Yojana Portal website</h2>
-        <h1>WWW.YOJNAPORTAL.COM</h1>
+        <h1 style="font-size:2vw;">WWW.YOJNAPORTAL.COM</h1>
     </header>
-    <nav>
-        <ul>
-            <li><a href="#home" onclick="showCategory('home')">Home</a></li>
-            <li><a href="#about" onclick="showCategory('about')">About</a></li>
-            <li><a href="#services" onclick="showCategory('services')">Services</a></li>
-            <li><a href="https://bit.ly/SarkariJankari">Contact</a></li>
-        </ul>
-    </nav>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
+        <a href="https://bit.ly/SarkariJankari">Join WhatsApp</a>
+        <a href="https://telegram.me/yojnaportal">Join Telegram</a>
+        <div class="dropdown">
+            <button class="dropbtn">Latest Jobs
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="#">Latest Jobs</a>
+                <a href="#">Admit Card</a>
+                <a href="#">Result</a>
+            </div>
+        </div> 
+        <a href="#about">About</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+    </div>
     <main>
         <div id="english-content">
-            <div class="category-content" id="home">
-                <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
+
+            <div class="category-content" id="home-en">
+                <!-- --------------------------------------- -->
+                <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+          <!-- --------------------------------------- -->
             </div>
-             <div class="category-content" id="schemes">
-                <p>Schemes </p>
+            <div class="category-content" id="schemes-en">
+            <!-- --------------------------------------- -->
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/schemes.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            <!-- --------------------------------------- -->
             </div>
-            <div class="category-content" id="jobs">
-                <p> jobs portal </p>
+            <div class="category-content" id="jobs-en">
+                <!-- --------------------------------------- -->
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/jobs.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            <!-- --------------------------------------- -->
+
+
+
+
             </div>
-             <div class="category-content" id="alert">
-                <p> Student Helps </p>
+            <div class="category-content" id="alert-en">
+                 <!-- --------------------------------------- -->
+                <iframe src="https://yojnaportalupdate.blogspot.com/p/alert.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+
+<!-- --------------------------------------- -->
             </div>
-             <div class="category-content" id="more">
-                <p>More</p>
+            <div class="category-content" id="more-en">
+              <!-- --------------------------------------- -->
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/more.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            <!-- --------------------------------------- -->
             </div>
         </div>
         <div id="hindi-content" style="display:none;">
-          <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
+           
+            <div class="category-content" id="home-hi">
+                <!-- --------------------------------------- -->
+                <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+
+<!-- --------------------------------------- -->
+
+
+            </div>
+            <div class="category-content" id="schemes-hi">
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/schemes.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            </div>
+            <div class="category-content" id="jobs-hi">
+              <!-- --------------------------------------- -->
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/jobs.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            <!-- --------------------------------------- -->
+            </div>
+            <div class="category-content" id="alert-hi">
+                <!-- --------------------------------------- -->
+                <iframe src="https://yojnaportalupdate.blogspot.com/p/alert.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+
+<!-- --------------------------------------- -->
+            </div>
+            <div class="category-content" id="more-hi">
+               <!-- --------------------------------------- -->
+               <iframe src="https://yojnaportalupdate.blogspot.com/p/more.html" width="100%" height="1000" style="border:none;" loading="lazy" aria-label="Content"></iframe>
+            <!-- --------------------------------------- -->
+            </div>
         </div>
     </main>
     <footer>
-        <div><a href="#category1" onclick="showCategory('home')">Home</a></div>
-        <div><a href="#category2" onclick="showCategory('schemes')">Yojna</a></div>
-        <div><a href="#category3" onclick="showCategory('jobs')"> jobs </a></div>
-        <div><a href="#category4" onclick="showCategory('alert')">Alert</a></div>
-        <div><a href="#category5" onclick="showCategory('more')">All</a></div>
-        <a href="https://www.yojnaportal.com" title="Yojna Portal Visits"><img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=efdehcwl1gbxxhu1fl8pukejtjynh677" border="0" title="Yojna Portal" alt="Yojna Portal Hits"></a>
+        <a href="https://www.yojnaportal.com" title="Yojna Portal Visits">
+            <img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=efdehcwl1gbxxhu1fl8pukejtjynh677" border="0" title="Yojna Portal" alt="Yojna Portal Hits">
+        </a>
     </footer>
+    <div class="navbar">
+        <div><a href="#home" onclick="showCategory('home')">Home</a></div>
+        <div><a href="#schemes" onclick="showCategory('schemes')">Yojna</a></div>
+        <div><a href="#jobs" onclick="showCategory('jobs')">Jobs</a></div>
+        <div><a href="#alert" onclick="showCategory('alert')">Alert</a></div>
+        <div><a href="#more" onclick="showCategory('more')">More</a></div>
+    </div>
     <script>
         function setLanguage(lang) {
+            const englishContent = document.getElementById('english-content');
+            const hindiContent = document.getElementById('hindi-content');
+            const headerTitle = document.getElementById('header-title');
+            const headerSubtitle = document.getElementById('header-subtitle');
+
             if (lang === 'en') {
-                document.getElementById('english-content').style.display = 'block';
-                document.getElementById('hindi-content').style.display = 'none';
-                document.getElementById('header-title').textContent = 'Yojna Portal';
-                document.getElementById('header-subtitle').textContent = 'This site is under progress, soon this website will look in a better view, stay tuned to Yojana Portal website';
+                englishContent.style.display = 'block';
+                hindiContent.style.display = 'none';
+                headerTitle.textContent = 'Yojna Portal';
+                headerSubtitle.textContent = 'This site is under progress, soon this website will look in a better view, stay tuned to Yojana Portal website';
             } else {
-                document.getElementById('english-content').style.display = 'none';
-                document.getElementById('hindi-content').style.display = 'block';
-                document.getElementById('header-title').textContent = 'योजना पोर्टल';
-                document.getElementById('header-subtitle').textContent = 'यह साइट प्रगति पर है, जल्द ही यह वेबसाइट बेहतर दृश्य में दिखेगी, योजना पोर्टल वेबसाइट पर बने रहें';
+                englishContent.style.display = 'none';
+                hindiContent.style.display = 'block';
+                headerTitle.textContent = 'योजना पोर्टल';
+                headerSubtitle.textContent = 'यह साइट प्रगति पर है, जल्द ही यह वेबसाइट बेहतर दृश्य में दिखेगी, योजना पोर्टल वेबसाइट पर बने रहें';
             }
+
+            // Update language buttons active state
+            document.querySelectorAll('.language-buttons button').forEach(btn => {
+                btn.ariaPressed = btn.innerText === (lang === 'en' ? 'English' : 'हिंदी');
+            });
+
+            // Show the home category by default when switching languages
+            showCategory('home');
         }
+
         function showCategory(category) {
-            const categories = document.getElementsByClassName('category-content');
-            for (let i = 0; i < categories.length; i++) {
-                categories[i].style.display = 'none';
-            }
-            document.getElementById(category).style.display = 'block';
+            const currentLang = document.getElementById('english-content').style.display === 'block' ? 'en' : 'hi';
+            const categories = document.querySelectorAll('.category-content');
+
+            categories.forEach(cat => {
+                cat.style.display = 'none';
+            });
+
+            document.getElementById(category + '-' + currentLang).style.display = 'block';
+
+            // Update navbar active state
+            document.querySelectorAll('.navbar a').forEach(nav => {
+                nav.classList.remove('active');
+            });
+            document.querySelector(`.navbar a[href="#${category}"]`).classList.add('active');
         }
+
         document.addEventListener("DOMContentLoaded", function() {
             setLanguage('en'); // Default language is English
-            showCategory('home'); // Default category is Home
         });
+
+        function myFunction() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
     </script>
 </body>
 </html>
