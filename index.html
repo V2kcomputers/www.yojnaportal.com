@@ -46,6 +46,7 @@
             margin: 0;
             display: flex;
             justify-content: center;
+            flex-wrap: wrap;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         nav ul li {
@@ -64,14 +65,28 @@
         main {
             padding: 2rem;
         }
+        .category-content {
+            display: none;
+        }
         footer {
             background-color: #333;
             color: white;
             text-align: center;
             padding: 1rem 0;
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-            position: relative;
-            margin-top: 2rem;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        footer div {
+            margin: 5px;
+            padding: 5px 10px;
+            background-color: #444;
+            border-radius: 5px;
         }
         footer a {
             color: #feb47b;
@@ -106,6 +121,9 @@
                 top: 5px;
                 right: 5px;
             }
+            footer {
+                flex-direction: column;
+            }
         }
         /* Tablet Styles */
         @media (min-width: 601px) and (max-width: 1024px) {
@@ -127,22 +145,40 @@
     </header>
     <nav>
         <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#home" onclick="showCategory('home')">Home</a></li>
+            <li><a href="#about" onclick="showCategory('about')">About</a></li>
+            <li><a href="#services" onclick="showCategory('services')">Services</a></li>
             <li><a href="https://bit.ly/SarkariJankari">Contact</a></li>
         </ul>
     </nav>
     <main>
         <div id="english-content">
-            <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
+            <div class="category-content" id="home">
+                <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
+            </div>
+             <div class="category-content" id="schemes">
+                <p>Schemes </p>
+            </div>
+            <div class="category-content" id="jobs">
+                <p> jobs portal </p>
+            </div>
+             <div class="category-content" id="alert">
+                <p> Student Helps </p>
+            </div>
+             <div class="category-content" id="more">
+                <p>More</p>
+            </div>
         </div>
         <div id="hindi-content" style="display:none;">
-            <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
+          <iframe src="https://www.v2kcomputers.com/p/recent-update.html" width="100%" height="1000" style="border:none;"></iframe>
         </div>
     </main>
     <footer>
-        <p>&copy; 2024 Yojna Portal</p>
+        <div><a href="#category1" onclick="showCategory('home')">Home</a></div>
+        <div><a href="#category2" onclick="showCategory('schemes')">Yojna</a></div>
+        <div><a href="#category3" onclick="showCategory('jobs')"> jobs </a></div>
+        <div><a href="#category4" onclick="showCategory('alert')">Alert</a></div>
+        <div><a href="#category5" onclick="showCategory('more')">All</a></div>
         <a href="https://www.yojnaportal.com" title="Yojna Portal Visits"><img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=efdehcwl1gbxxhu1fl8pukejtjynh677" border="0" title="Yojna Portal" alt="Yojna Portal Hits"></a>
     </footer>
     <script>
@@ -159,8 +195,16 @@
                 document.getElementById('header-subtitle').textContent = 'यह साइट प्रगति पर है, जल्द ही यह वेबसाइट बेहतर दृश्य में दिखेगी, योजना पोर्टल वेबसाइट पर बने रहें';
             }
         }
+        function showCategory(category) {
+            const categories = document.getElementsByClassName('category-content');
+            for (let i = 0; i < categories.length; i++) {
+                categories[i].style.display = 'none';
+            }
+            document.getElementById(category).style.display = 'block';
+        }
         document.addEventListener("DOMContentLoaded", function() {
             setLanguage('en'); // Default language is English
+            showCategory('home'); // Default category is Home
         });
     </script>
 </body>
