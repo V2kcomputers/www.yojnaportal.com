@@ -16,9 +16,9 @@ header {
 }
 
 .language-buttons {
-    position: absolute;
-    bottom: 0;
-    left: 10;
+    
+    bottom: 10px;
+    left: 10px;
 }
 
 .language-buttons button {
