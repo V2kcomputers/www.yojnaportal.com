@@ -33,7 +33,7 @@ header {
 }
 
 .language-buttons button:hover {
-    background-color: #555;
+    background-color: #ff7e5f;
 }
 
 .topnav {
@@ -52,7 +52,7 @@ header {
 }
 
 .active {
-    background-color: #04AA6D;
+    background-color: #ff7e5f;
     color: white;
 }
 
