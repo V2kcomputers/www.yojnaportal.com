@@ -1,19 +1,27 @@
 /* General styles */
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
 
-body {
-    font-size: 16px;
-    line-height: 1.6;
-}
+            background-color: #f9f9f9;
+    }
+
+
 
 header {
     margin-top: 3px;
-    max-width: 900px;
+    max-width: 100%;
     text-align: center;
 margin:auto;
 
@@ -21,7 +29,7 @@ margin:auto;
     justify-content: space-between;
     align-items: center;
     padding: 0.1rem;
-    z-index: 1000;
+        background: linear-gradient(to right, #886600, #ffff99, #886600);
 }
 
 
@@ -29,18 +37,20 @@ margin:auto;
 .logo {
     margin-top: 8px;
     z-index: 999;
+    margin: auto;
 
 }
-#logoimg{  max-width: 125px;
+#logoimg{  max-width: 100px;
   height: auto; 
 }
 
 .portal-name {
     font-size: 5vw;
-    margin-left: 1rem;
+    margin:auto;
      font-weight:900;
-     color: #f4b400;;
-text-shadow: 1px 3px 8px black;
+     color: black;
+     marging:auto;
+
 }
 
 .container {
@@ -69,20 +79,6 @@ text-shadow: 1px 3px 8px black;
     z-index: 999;
 }
 
-.search-container {
-    flex-grow: 1;
-    margin: 0 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.search-container input {
-    width: 50%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-}
 
 .scrollmenu {
     background: linear-gradient(to right, rgb(255, 78, 57), rgb(255, 115, 68));
@@ -111,8 +107,9 @@ text-shadow: 1px 3px 8px black;
 
 main {
     padding-top: 0px;
-    max-width:900px;
+    max-width:100%;
     margin: auto;
+    padding: 10px;
 }
 
 .content {
@@ -145,12 +142,12 @@ section {
 
 .bottom-nav ul {
     list-style: none;
-    display: flex;
+ 
     justify-content: center;
     padding: 0.1rem 0;
     margin: 0;
 }
-
+ul {   display: flex;}
 .bottom-nav ul li {
     flex: 1;
     text-align: center;
@@ -159,7 +156,7 @@ section {
 .bottom-nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.5rem;
     transition: background-color 0.3s, color 0.3s;
     padding: 0.2rem 1.8rem;
     display: block;
@@ -176,6 +173,7 @@ button {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
+
 }
 
 
@@ -186,28 +184,20 @@ button {
 
 
 
-.top-menu {
-    background: #f4b400;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 0;
-    width: 100%;
-    height:5px;
-    z-index: 1000;
-    box-shadow: 1px 1px 8px;
-}
 
+
+/* column Container */
 .col-container {
             display: flex;
-            max-width: 900px;
+            max-width: 80%;
             margin:auto;
-            gap: 16px; /* Add space between columns */
+            gap: 8px; /* Add space between columns */
             padding: 16px; /* Add padding around the container */
             box-sizing: border-box; /* Ensure padding and borders are included in the element's total width and height */
         }
 
         .col {
+
             flex: 1;
             border: 1px dashed black;
             box-shadow: 1px 3px 8px;
@@ -221,34 +211,340 @@ button {
         }
         #list {padding: 0px 10px 0px; }
 
-        #headtop, #headbottom {
-            background-color: lightblue;
-            padding: 8px;
+        #headtop {background: linear-gradient(to right, #886600, #ffff99, #886600);
+              padding: 8px;
             text-align: center;
-            font-weight: bold;
-        }
+            font-weight: bold;}
+
+    
 
         #headbottom {
-            background-color: lightgreen;
+              background: linear-gradient(to right, rgb(255, 78, 57), rgb(255, 115, 68));
+             padding: 3px 15px 5px 5px;
+             color:white;
+            text-align: right;
+            font-weight: bold;
             margin-top: auto;
         }
 
 
+/* column Container */
+
+/* top table Style */
+
+
+.data-table {
+
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin:auto;
+  
+}
+
+.data-table th {
+  margin:100px;
+    background-color: #3498DB;
+    color: #FFF;
+    padding: 0.5rem;
+    text-align: center; /* Center the header text */
+    border: 1px solid white;
+  border-radius:10px;
+}
+
+.data-table td {
+  background-color: #3498DB;
+    padding: 5px;
+    text-align: center; /* Center the cell content */
+    border: 1px solid #fff;
+  border-radius:10px;
+  margin:100px;
+  
+}
+
+/* top table Style */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* jobs date Style Page */
+  
+  
+
+    h2 {
+      color: #333;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      background-color: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+#datezoon1 { background: linear-gradient(to right, rgb(255, 78, 57), rgb(255, 115, 68)); 
+ width: 200px;
+    background-color: #ff0000; /* Red */
+    background-image: linear-gradient(to right, #ff0000, #ffff00); /* Yellow gradient */
+    background-size: 200px 100%; /* Adjust size to match container */
+}
+
+#datezoon  {
+            position: relative;
+            width: 180px; /* Adjust width as needed */
+         /* Adjust height as needed */
+        color: white;
+        font-weight: 700;
+        text-shadow: 1px 5px 7px black;
+          
+        }
+        #datezoon:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 220px; /* Adjust width as needed */
+          height: 30px; /* Same height as the shape */
+            background: linear-gradient(to right, rgb(255, 78, 57), rgb(255, 115, 68)); 
+            transform: skewX(-45deg);
+            transform-origin: top right;
+               z-index:-3;
+               margin: auto;
+               color: white;
+
+        }
+
+
+
+    .expired {
+      background-color: #f8d7da;
+    }
+
+    .upcoming {
+      background-color: #d4edda;
+    }
+
+    .today {
+      background-color: #fff3cd;
+    }
+
+    .yesterday {
+      background-color: #f5c6cb;
+    }
+
+    .tomorrow {
+      background-color: #c3e6cb;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+ a { aecoration: none; }
+/* footer style.css started*/
+
+#footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 20px 0;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 16px;
+        transition: color 0.3s;
+    }
+
+    .footer-links a:hover {
+        color: #f2a365;
+    }
+
+    .social-media {
+        display: flex;
+        gap: 15px;
+    }
+
+    .social-media a {
+        color: #ffffff;
+        font-size: 20px;
+        transition: color 0.3s;
+    }
+
+    .social-media a:hover {
+        color: #f2a365;
+    }
+
+    .footer-counter {
+        margin-top: 20px;
+    }
+
+    .footer-counter img {
+        max-width: 100px;
+        height: auto;
+    }  
+ /* footer style.css finished*/ 
+
+
+  /* footer style.css start*/ 
+
+.top-menu { font-size:8px;
+margin:auto;
+padding:2px;
+background-color: #f4b400;}
+
+.top-menu li {margin-left:10px;
+}
+
+ /* top manu style.css finished*/ 
+
+
+
+
+
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .footer-links {
+            justify-content: center;
+        }
+
+        .footer-counter {
+            margin-top: 0;
+        }
+
+
+.col-container {
+    width: 80%;
+           
+            max-width: 80%;
+           padding:10px 10px 5px 0px;
+           gap: 10px;
+        }
+
+    }
+ 
+
+
+
+/* jobs date Style Page finished */
+
+/* media Size start */
+
 @media (max-width: 600px) {
+
+main {
+    padding-top: 0px;
+    
+    margin: auto;
+    padding: 0px;
+}
+
+.col-container {
+    width: 90%;
+           
+            max-width: 90%;
+           padding:10px 10px 5px 0px;
+           gap: 10px;
+        }
+
+ 
+ 
+
+
+  .jobcontainer {
+    font-size:09px;
+    }
+
+
+  .col {
+          width:100px;
+          font-size: 9px;
+        
+        }
+
+
+
+
+
     .content {
         flex-direction: column;
     }
 
 .portal-name {
     font-size: 7vw;
-    margin-left: 0rem;
-
+    margin:auto;
+   
      font-weight:100%;
  
 }
 
     .bottom-nav {
-        display: flex;
+        display: block;
     }
 
     .data-table {
@@ -261,6 +557,9 @@ button {
 
 
 
+
+
+
 }
 
 
@@ -268,5 +567,57 @@ button {
     .bottom-nav {
         display: none;
     }
+
+
+
+
+      table, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+      }
+
+      tr {
+        margin-bottom: 15px;
+      }
+
+      th, td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+      }
+
+      th::before, td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 15px;
+        font-weight: bold;
+        text-align: left;
+      }
+
+      th {
+        display: none;
+      }
+
+      td {
+        border: none;
+        border-bottom: 1px solid #ddd;
+      }
+
+      td:last-child {
+        border-bottom: 0;
+      }
+
+      .container {
+        padding: 10px;
+      }
+
+      h2 {
+        font-size: 18px;
+      }
+
+
+
 
 }
