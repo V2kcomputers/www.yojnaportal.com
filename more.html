@@ -19,7 +19,13 @@
 <body>
      <!-- Top Menu -->
     <div class="top-menu">
-        
+        <div>
+            <ul class="top-link">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
     <header>
          <div class="logo"><img  id="logoimg"  alt="YojnaPortal" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxBpuAARrYVHhssVEkmeThsEnmkkVOe4qxket9BKKS3CjF3-d_kbaqYRi1IdbEWS3zDnd-fbjGoMf_VneGCDNWuU5UJWurTBE4qT_txrgYggezCaINJj5QSAwES8K54nlrrTjjAJVD7visVIUQOgmU3u_PSsXDq8MiD_9JXte9FvDv6O3TsmhJ7m9J/s1600/Yojna%20Portal%20Logo%2002.png"/></div>
@@ -27,63 +33,66 @@
      
     </header>
     
-     <div class="scrollmenu">
-  <a href="index.html" class="active">Home</a>
-  <a href="yojna.html">Yojna</a>
-  <a href="jobs.html">Jobs</a>
-  <a href="exams.html">Exams</a>
-  <a href="more.html">more</a>
-
-</div>
+      <div class="scrollmenu">
+        <a href="index.html" class="active">Home</a>
+        <a href="yojna.html">Yojna</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="exams.html">Exams</a>
+        <a href="more.html">More</a>
+         <a href="https://www.v2kcomputers.com/p/pdf-formsjn.html">PDF Form</a>
+         <a href="https://tools.v2kcomputers.com/p/home.html"> Advance Tools </a>
+           <a href="#">Admit Card</a>
+            <a href="#">Result</a>
+    </div>
     <main>
         <style>
-div.gallery {
-  margin: 5px;
-  border: 1px solid #ccc;
-  float: left;
-  width: 150px;
-  font-size: 15px;
-  font-weight:700;
 
-  border-radius:10px;
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 100%;
+    max-width: 150px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 10px;
+    box-sizing: border-box;
 }
 
 div.gallery:hover {
-  border: 1px solid green;
-  width: 150px;
- 
+    border: 1px solid green;
 }
 
-div.gallery #img {
-  width: 100%;
-  height: 100px;
+.gallery img {
+    width: 100%;
+    height: auto;
 }
-
 
 div.desc {
-  padding: 15px;
-  text-align: center;
-}
-  
-img:hover {
-  
+    padding: 15px;
+    text-align: center;
 }
 
-@keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, -2px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
-}  
-  
-  
+
+
+img:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+img:active {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 600px) {
+    div.gallery {
+       
+        width: 100%;
+    }
+}
+
 </style>
 </head>
 <body>
@@ -314,7 +323,7 @@ img:hover {
             <li><a href="more.html" class="active">More</a></li>
         </ul>
     </nav>
-    <a href="https://www.yojnaportal.com" title="Yojna Portal Vistis"><img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=sfcs8dthkqrgk2me28qy66z5papadmsksnd" border="0" title="Yojna Portal" alt="Yojana Portal Hits"></a>
+  
     <script src="script.js"></script>
 </body>
 </html>
