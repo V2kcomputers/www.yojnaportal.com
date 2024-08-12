@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="description" content=" www.yojnaportal.com sarkari Results, lastdate, Sarkariresult.com, yojnaportal Yojna Portal provides the latest updates and detainled infrormation on government schemes, policies, Jobs, Exams, Recruitment Jobs, Scholarships, College,  and benfits in India. Stay infromed and take advantage of available opportunities. ">
     <link rel="stylesheet" href="styles.css">
+     <script src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Yojna Portal - Latest Jobs </title>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWSRPE5DVE"></script>
@@ -19,14 +20,20 @@
 <body>
      <!-- Top Menu -->
     <div class="top-menu">
-        
+        <div>
+            <ul class="top-link">
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
     </div>
    <header>
         <div class="logo"><img  id="logoimg"  alt="YojnaPortal" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgxBpuAARrYVHhssVEkmeThsEnmkkVOe4qxket9BKKS3CjF3-d_kbaqYRi1IdbEWS3zDnd-fbjGoMf_VneGCDNWuU5UJWurTBE4qT_txrgYggezCaINJj5QSAwES8K54nlrrTjjAJVD7visVIUQOgmU3u_PSsXDq8MiD_9JXte9FvDv6O3TsmhJ7m9J/s1600/Yojna%20Portal%20Logo%2002.png"/></div>
         <div class="portal-name">YOJNA PORTAL</div>
     
     </header>
-<div class="scrollmenu">
+ <div class="scrollmenu">
         <a href="index.html" class="active">Home</a>
         <a href="yojna.html">Yojna</a>
         <a href="Jobs.html">Jobs</a>
@@ -38,146 +45,12 @@
             <a href="#">Result</a>
     </div>
 
-
        
     <main>
-       <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Postings</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
+     
 
-    .container {
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    h2 {
-      color: #333;
-      text-align: center;
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      background-color: white;
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #4CAF50;
-      color: white;
-    }
-
-    .expired {
-      background-color: #f8d7da;
-    }
-
-    .upcoming {
-      background-color: #d4edda;
-    }
-
-    .today {
-      background-color: #fff3cd;
-    }
-
-    .yesterday {
-      background-color: #f5c6cb;
-    }
-
-    .tomorrow {
-      background-color: #c3e6cb;
-    }
-
-    button {
-      padding: 10px;
-      background-color: #007bff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-
-    a {
-      text-decoration: none;
-      color: white;
-    }
-
-    @media (max-width: 600px) {
-      table, tbody, th, td, tr {
-        display: block;
-        width: 100%;
-      }
-
-      tr {
-        margin-bottom: 15px;
-      }
-
-      th, td {
-        text-align: right;
-        padding-left: 50%;
-        position: relative;
-      }
-
-      th::before, td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-left: 15px;
-        font-weight: bold;
-        text-align: left;
-      }
-
-      th {
-        display: none;
-      }
-
-      td {
-        border: none;
-        border-bottom: 1px solid #ddd;
-      }
-
-      td:last-child {
-        border-bottom: 0;
-      }
-
-      .container {
-        padding: 10px;
-      }
-
-      h2 {
-        font-size: 18px;
-      }
-    }
-  </style>
-</head>
-<body>
-  <body>
-  <div class="jobcontainer">
-    <h2>Last Date Today</h2>
+  <div class="jobcontainer" >
+    <div id="datezoon">Last Date Today</div>
     <table id="today-table">
       <thead>
         <tr>
@@ -223,7 +96,7 @@
       </tbody>
     </table>
 
-    <h2>Last Date Tomorrow</h2>
+    <div id="datezoon">Last Date Tomorrow</div>
     <table id="tomorrow-table">
       <thead>
         <tr>
@@ -238,22 +111,9 @@
       </tbody>
     </table>
 
-    <h2>Was Yesterday</h2>
-    <table id="yesterday-table">
-      <thead>
-        <tr>
-          <th>Post Title</th>
-          <th>Category</th>
-          <th>Last Date</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Rows for jobs whose last date was yesterday will be inserted here -->
-      </tbody>
-    </table>
 
-    <h2>Upcoming</h2>
+
+    <div id="datezoon">Upcoming</div>
     <table id="upcoming-table">
       <thead>
         <tr>
@@ -268,14 +128,32 @@
       </tbody>
     </table>
 
-    <h2>Expired</h2>
-    <table id="expired-table">
+
+    <div id="datezoon">Was Yesterday</div>
+    <table id="yesterday-table">
       <thead>
         <tr>
-          <th>Post Title</th>
-          <th>Category</th>
-          <th>Last Date</th>
-          <th>Link</th>
+          <th style="background-color: rgb(255, 115, 68)" >Post Title</th>
+          <th style="background-color: rgb(255, 115, 68)">Category</th>
+          <th style="background-color: rgb(255, 115, 68)">Last Date</th>
+          <th style="background-color: rgb(255, 115, 68)">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Rows for jobs whose last date was yesterday will be inserted here -->
+      </tbody>
+
+    </table>
+
+
+    <div id="datezoon">Expired</div>
+    <table id="expired-table">
+      <thead>
+        <tr >
+          <th  style="background-color: rgb(255, 78, 57)">Post Title</th>
+          <th style="background-color: rgb(255, 78, 57)">Category</th>
+          <th style="background-color: rgb(255, 78, 57)">Last Date</th>
+          <th style="background-color: rgb(255, 78, 57)">Link</th>
         </tr>
       </thead>
       <tbody>
@@ -284,7 +162,7 @@
     </table>
   </div>
  
-    <main>
+    </main>
     <nav class="bottom-nav" id="bottomNav">
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -295,8 +173,27 @@
         </ul>
     </nav>
     <a href="https://www.yojnaportal.com" title="Yojna Portal Vistis"><img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=sfcb2b7yxml2exrecyxrnpc2nfed2q44wyb" border="0" title="Yojna Portal" alt="Yojana Portal Hits"></a><br>
-    <script src="script.js"></script>
+   
 </body>
+<footer id="footer">
+
+
+    <div class="footer-content">
+       
+        
+        <div class="social-media">
+            <a href="https://telegram.me/yojnaportal"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://bit.ly/SarkariJankari"><i class="fab fa-telegram"></i></a>
+              
+
+        </div>
+    </div>
+
+     <a href="https://www.yojnaportal.com" title="Yojna Portal Visits">
+            <img src="https://counter8.optistats.ovh/private/freecounterstat.php?c=efdehcwl1gbxxhu1fl8pukejtjynh677" border="0" title="Yojna Portal" alt="Yojna Portal Hits">
+        </a>
+         <p>&copy; Copyright Yojna Portal, 2024</p>
+</footer> 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const today = new Date();
@@ -345,4 +242,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
+
 </html>
