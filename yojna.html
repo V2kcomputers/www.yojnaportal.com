@@ -46,8 +46,209 @@
   
     <main>
         <section id="yojna">
-            <h1>Yojna</h1>
-            <p>Welcome to the Jobs section.</p>
+           <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #myInput {
+            width: 80%;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin: auto;
+            background-image: url('https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhlYgfWv2La9x23vIzk6Ztigu0f8-2FRaH39O17E00K0ZZpB2F5PzPz40l-Fs2DWZN7pW_VAzt_mckhgx5TIsVtCAYDQyJJzr0Mr6Ovi32wRAwC-1kYPKEWx5E1jzowm8a3ET-yqa8SGOieiDcnqc4dEvGX9qO9hy9TUTCl4Yp7Movy-GWG5Ym0olTq0A/s1600/free-search-icon-20.png');
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 220px;
+            left: 10%;
+            z-index: 1000;
+            border-radius: 20px;
+        }
+
+        select {
+            background-position: 10px 12px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 180px;
+            right: 50px;
+            z-index: 1000;
+            padding: 10px;
+    background-color: #f4b400;
+    
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+        }
+
+        #languageToggle {
+            position: absolute;
+            top: 180px;
+            right: 200px;
+            z-index: 1000;
+        }
+
+        #myBtnContainer {
+            margin-top: 100px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .container1 {
+            padding: 20px;
+            display: block;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 0;
+            padding: 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(to right, rgb(255, 78, 57), rgb(255, 115, 68));
+        }
+
+        td a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        td:hover  {
+            background-color: #f2f2f2;
+            color: black;
+
+        }
+
+        .filterDiv {
+            display: none;
+        }
+
+        .show {
+            display: table-row;
+        }
+
+        .language {
+            display: none;
+        }
+
+        .language.active {
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .container1 {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search Recently Update.">
+
+<button id="languageToggle" onclick="toggleLanguage()">हिन्दी</button>
+
+<div id="myBtnContainer">
+    <select id="filterDropdown" onchange="filterSelection(this.value)">
+        <option value="all">Show All</option>
+        <option value="central">Central</option>
+        <option value="mp">Madhya Pradesh</option>
+        <option value="up">Uttar Pradesh</option>
+        <option value="mh">Maharashtra</option>
+        <option value="hr">Hariyana</option>
+        <option value="punjab">Punjab</option>
+        <option value="rj">Rajasthan</option>
+        <option value="bihar">Bihar</option>
+    </select>
+</div>
+
+<div class="container1">
+    <div id="englishTable" class="language active">
+        <table id="myTableEnglish">
+            <thead>
+                <tr>
+                    <th>Scheme Title</th>
+                    <th>Division</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="myTbodyEnglish">
+                <tr class="filterDiv central">
+                    <td>
+                        <a href="https://student.v2kcomputers.com/2024/07/mp-board-supplementary-results-2024.html" target="_blank">
+                            10th And 12th Supplementary Results 2024
+                        </a>
+                    </td>
+                    <td>🔹31/07/2024</td>
+                    <td><a href="#"><button id="checkbtn"> Click Here </button></a></td>
+                </tr>
+                <tr class="filterDiv mp">
+                    <td>
+                        <a href="https://www.v2kcomputers.com/2022/05/sambal-card.html" target="_blank">
+                            Mukhya Mantri Sambal Yojna
+                        </a>
+                    </td>
+                    <td>Madhya Pradesh</td>
+                    <td><a href="#"><button id="checkbtn"> Click Here </button></a></td>
+                </tr>
+                <!-- Add more table rows as needed -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="hindiTable" class="language">
+        <table id="myTableHindi">
+            <thead>
+               <tr>
+                    <th>Scheme Title</th>
+                    <th>Division</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody id="myTbodyHindi">
+                <tr class="filterDiv central">
+                    <td>
+                        <a href="https://student.v2kcomputers.com/2024/07/mp-board-supplementary-results-2024.html" target="_blank">
+                            10वीं और 12वीं पूरक परिणाम 2024
+                        </a>
+                    </td>
+                    <td>🔹31/07/2024</td>
+                    <td><a href="#"><button id="checkbtn"> Click Here </button></a></td>
+                </tr>
+                <tr class="filterDiv mp">
+                    <td>
+                        <a href="https://www.v2kcomputers.com/2022/05/sambal-card.html" target="_blank">
+                            मुख्यमंत्री संबल योजना
+                        </a>
+                    </td>
+                    <td>मध्य प्रदेश</td>
+                    <td><a href="#"><button id="checkbtn"> Click Here </button></a></td>
+                </tr>
+                <!-- Add more table rows as needed -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
         </section>
     </main>
     <nav class="bottom-nav">
@@ -79,6 +280,68 @@
          <p>&copy; Copyright Yojna Portal, 2024</p>
 </footer> 
 
-    <script src="scripts.js"></script>
+    <script src="script.js"></script>
+
+<script>
+    function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+
+        // Filter English Table
+        table = document.getElementById("myTableEnglish");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+
+        // Filter Hindi Table
+        table = document.getElementById("myTableHindi");
+        tr = table.getElementsByTagName("tr");
+        for (i = 1; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[0];
+            if (td) {
+                txtValue = td.textContent || td.innerText;
+                tr[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+            }
+        }
+    }
+
+    function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("filterDiv");
+        for (i = 0; i < x.length; i++) {
+            x[i].classList.remove("show");
+            if (c === "all" || x[i].classList.contains(c)) {
+                x[i].classList.add("show");
+            }
+        }
+    }
+
+    function toggleLanguage() {
+        var englishTable = document.getElementById("englishTable");
+        var hindiTable = document.getElementById("hindiTable");
+        var languageToggle = document.getElementById("languageToggle");
+
+        if (englishTable.classList.contains("active")) {
+            englishTable.classList.remove("active");
+            hindiTable.classList.add("active");
+            languageToggle.textContent = "English";
+        } else {
+            hindiTable.classList.remove("active");
+            englishTable.classList.add("active");
+            languageToggle.textContent = "हिन्दी";
+        }
+    }
+
+    // Initialize filter on page load
+    filterSelection('all');
+</script>
+
+
 </body>
 </html>
